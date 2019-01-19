@@ -1,0 +1,58 @@
+<section class="mb-4">
+    <h2 class="h1-responsive font-weight-bold text-center my-4">Contact</h2>
+    <p class="text-center w-responsive mx-auto mb-5">Vous avez une question ? Contactez-nous.</p>
+
+    <div class="row">
+        <div class="col-md-9 mb-md-0 mb-5">
+            <form id="contact-form" name="contact-form" action="mail.php" method="POST">
+                <div class="row">
+                    <div class="col-md-6">
+                        <div id="div-name" class="form-group pmd-textfield pmd-textfield-floating-label">
+                            <label for="name" class="control-label">Nom  <span id="info_nom"></span></label>
+                            <input type="text" id="name" name="name" class="form-control" onkeyup="regexNom(), enableFormButton()" >   
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div id="div-email" class="form-group pmd-textfield pmd-textfield-floating-label">
+                            <label for="email" class="control-label">Email  <span id="info_email">    </span></label>
+                            <input type="text" id="email" name="email" class="form-control" onkeyup="regexEmail(), enableFormButton()">
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-12">
+                        <div id="div-objet" class="form-group pmd-textfield pmd-textfield-floating-label">
+                            <label for="subject" class="control-label">Sujet  <span id="info_objet">    </span></label>
+                            <input type="text" id="objet" name="objet" class="form-control" onkeyup="regexObjet(), enableFormButton()">
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-12">
+                        <div id="div-message" class="form-group pmd-textfield pmd-textfield-floating-label">
+                            <label for="message">Message  <span id="info_message">    </span></label>
+                            <textarea type="text" id="message" name="description" rows="4" class="form-control md-textarea" onkeyup="regexMessage(), enableFormButton()"></textarea>
+                        </div>
+                    </div>
+                </div>
+            </form>
+            <div class="text-center text-md-left">
+                <button onclick="getDefault()" id="btn-success-form" type="button"  data-positionX="center" data-positionY="top"  data-duration="6000" data-effect="fadeInUp" data-message="Votre message a été envoyé avec succès. Nous vous répondrons dans les meilleurs délais." data-type="success" class="btn pmd-ripple-effect btn-primary pmd-z-depth pmd-alert-toggle" disabled>Envoyer</button>
+            </div>
+            <div class="status"></div>
+        </div>
+        <div class="col-md-3 text-center">
+            <ul class="list-unstyled mb-0">
+                <li><i class="fa fa-map-marker fa-2x"></i>
+                    <p><strong>Adresse : </strong>Avenue des Champs Elysées, Paris, FRANCE</p>
+                </li>
+                <li><i class="fa fa-phone mt-4 fa-2x"></i>
+                    <p><strong>Tel : </strong> 36 65 65 65</p>
+                </li>
+                <li><i class="fa fa-envelope mt-4 fa-2x"></i>
+                    <p><strong>Email : </strong> contact@monprojetajax.com</p>
+                </li>
+            </ul>
+        </div>
+    </div>  
+</section>
