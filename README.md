@@ -1,5 +1,5 @@
 # AjaxDemo
->   Single Page website running with Ajax technology.
+>   Single Page Front-End website running with Ajax technology.
 >   To be tested using Browsersync (See https://www.browsersync.io/)
 
 ## Features

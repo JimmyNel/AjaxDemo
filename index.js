@@ -9,13 +9,13 @@ xhr.onreadystatechange = function () {
     if(xhr.readyState == 4 && xhr.status == 200){
         var jsonReponse = JSON.parse(xhr.responseText);
         afficherDefault(jsonReponse);
-        //console.log(jsonReponse);       
-    }   
+    }    
 }
 xhr.open("GET", "Accueil.json", true);
-xhr.send();
+xhr.send();   
 
-function getDefault(){
+// affiche la page Video Card (à partir d'un fichier Json) au clic sur l'onglet 1
+document.getElementById("tab1").onclick = function(){
     xhr.onreadystatechange = function () {
         if(xhr.readyState == 4 && xhr.status == 200){
             var jsonReponse = JSON.parse(xhr.responseText);
@@ -24,11 +24,8 @@ function getDefault(){
     }
     xhr.open("GET", "Accueil.json", true);
     xhr.send();   
-}
-
-// affiche la page Video Card (à partir d'un fichier Json) au clic sur l'onglet 1
-document.getElementById("tab1").onclick = getDefault();
-// affiche la page Video Card (à partir d'un fichier Json) au clic sur l'onglet 1
+};
+// affiche la page Presentation (à partir d'un fichier Html) au clic sur l'onglet 2
 document.getElementById("tab2").onclick = function(){
     xhr.onreadystatechange = function () {
         if(xhr.readyState == 4 && xhr.status == 200){
@@ -38,7 +35,7 @@ document.getElementById("tab2").onclick = function(){
     xhr.open("GET", "Presentation.html", true);
     xhr.send();    
 }
-// affiche la page Video Card (à partir d'un fichier Json) au clic sur l'onglet 1
+// affiche la page Video Contact (à partir d'un fichier Html) au clic sur l'onglet 3
 document.getElementById("tab3").onclick = function(){
     xhr.onreadystatechange = function () {
         if(xhr.readyState == 4 && xhr.status == 200){
@@ -128,7 +125,7 @@ function afficherDefault(JsonRep){
             </div>
             <div class="pmd-card-body">${JsonRep[i].contenu}</div>
             <div class="pmd-card-actions">
-                <button onclick="getLike()" id="btn-like" type="button" data-positionX="right" data-positionY="bottom"  data-duration="6000" data-effect="fadeInUp" data-message="Merci d'avoir aimer cette publication" data-type="information" class="btn btn-sm pmd-btn-fab pmd-btn-flat pmd-ripple-effect btn-primary pmd-alert-toggle"><i class="material-icons pmd-sm">thumb_up</i></button>
+                <button onclick="getLike()" id="btn-like" type="button" data-positionX="right" data-positionY="bottom"  data-duration="6000" data-effect="fadeInUp" data-message="Merci d'avoir aimé cette publication" data-type="information" class="btn btn-sm pmd-btn-fab pmd-btn-flat pmd-ripple-effect btn-primary pmd-alert-toggle"><i class="material-icons pmd-sm">thumb_up</i></button>
                 <button id="this-button" onclick="ClearFields()" data-target="#form-dialog" data-toggle="modal" type="button" class="btn btn-sm pmd-btn-fab pmd-btn-flat pmd-ripple-effect btn-primary"><i class="material-icons pmd-sm">drafts</i></button>
                 ${modalHtml}
             </div>
